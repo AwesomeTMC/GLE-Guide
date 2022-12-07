@@ -10,6 +10,8 @@ Other stuff may be read about on the [official wiki](https://github.com/SuperHac
 - [GLE](https://github.com/SuperHackio/GalaxyLevelEngine/releases) (Make sure not to download the template hack by accident!)
 - [Dolphin](https://dolphin-emu.org/)
 - [Whitehole](https://github.com/SunakazeKun/Whitehole-Despaghettification/releases)
+- [WiiExplorer](https://github.com/SuperHackio/WiiExplorer/releases)
+- [Scenaristar](https://github.com/SuperHackio/Scenaristar) - You may want to build it yourself as there is no release with GLE support yet.
 - A bit of knowledge on SMG2. 
 
 <sub>Read more on the necessary knowledge [here](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/SavePointList).</sub>
@@ -43,7 +45,7 @@ Open the XML that you just created and save a preset. Name it whatever your hack
 
 The game should be able to boot up, but won't be able to load a file. If this is the case...
 ## GLE is now initialized!
-**Congratulations!** Next we will be adding a hubworld.
+**Congratulations!** Next we will be adding a hubworld. Don't add any other custom code quite yet.
 
 ## Problem: Black Screen Loading Screen
 This happens because your XML is setup wrong. Make sure the folder name matches what you set `[YourHackName]` to.
@@ -67,11 +69,35 @@ Archive: `/ObjectData/SystemDataTable.arc`, File: `/SystemDataTable/SavePointLis
 
 <sub>1: an ID of 0 is required; 2: Replace `[YourHubworldName]` with the internal name of your hubworld; Read more about the SavePointList [here](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/SavePointList)</sub>
 
-To make the menu say "Save And Quit" instead of "Return to World Map" open:
+## To make the menu say "Save And Quit" instead of "Return to World Map"
+Archive: `/StageData/[YourHubworldName]/[YourHubworldName]Map.arc`, File: `/Stage/jmp/List/ScenarioSettings`<sup>1</sup>
 
-Archive: `/StageData/[YourHubworldName]/[YourHubworldName]Map.arc`, File: `/Stage/jmp/List/ScenarioSettings`
+<sub>1: There is no .bcsv on the end of ScenarioSettings. This is intentional.</sub>
 
-Add a new field and activate whatever you want [on this list](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Stages#available-settings).
+Add a new row and activate whatever you want [on this list](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Stages#available-settings).
 
 ## Congratulations!
-There have been no common errors on this yet. Let me know if you have a problem.
+There have been no common errors on this yet. Let me know if you have a problem. You may now add the custom code to your xml.
+
+# Adding a new galaxy
+
+First of all, either [Create a New Galaxy](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Creating-a-New-Galaxy) or [Convert an Existing Galaxy](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Converting-an-Existing-Galaxy).
+> Be sure to also change `YourGalaxyScenario.arc`'s root name. 
+
+> Add some entries for the galaxy in `GalaxyName.msbt`, `GalaxyNameShort.msbt`, and `ScenarioName.msbt`.
+
+Add a SceneChangeArea and set obj_arg0 to 0. This is the index to the **ZONE**'s [ChangeSceneListInfo](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Stages#changescenelistinfo).
+
+<sub>The other args can be read about [here](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Objects#scenechangearea). 
+
+Now time to edit the ChangeSceneListInfo.
+
+Archive: `/StageData/[YourHubworldZoneOrGalaxy]/[YourHubworldZoneOrGalaxy]Map.arc`, File: `/Stage/jmp/List/ChangeSceneListInfo`<sup>1</sup>
+
+<sub>1: There is no .bcsv on the end of ChangeSceneListInfo. This is intentional.</sub>
+
+Read up on [this](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Stages#changescenelistinfo) as it is fairly straightforward.
+
+If you converted a galaxy, you will need to change the [GalaxyInfo](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Stages#galaxyinfobcsv) so that stars will appear on the star select. Don't forget to copy over ALL the files you've modified to your riivolution space!
+## And we're done!
+Congratulations on getting through this guide. If you need help, let me know in [Discussions](https://github.com/AwesomeTMC/GLE-Guide/discussions) or on Discord. There is a LOT more to the galaxy level engine. I would recommend reading through some of the wiki pages, because they may inform you of features you weren't aware of.
