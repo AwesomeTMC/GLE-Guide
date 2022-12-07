@@ -15,13 +15,12 @@ Other stuff may be read about on the [official wiki](https://github.com/SuperHac
 First, [download GLE](https://github.com/SuperHackio/GalaxyLevelEngine/releases).
 Make a new folder just for this. 
 Go to `GLE-V2\Riivolution` and copy "GLE_V2" into your new folder.
+
 Additionally, make a `riivolution` folder inside the new folder.
 
 Inside the `riivolution` folder you just created, create a new xml. You can call it whatever.
 
 (Refer to [this](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Setup-Guide#making-a-riivolution-xml) for the layout of the xml)
-
-Inside `GLE_V2/LayoutData`
 
 Rename `GLE_V2` to whatever you called `[YourHackName]`.
 
@@ -48,3 +47,19 @@ This happens because your XML is setup wrong. Make sure the folder name matches 
 
 # Adding a hubworld
 
+To make the BCSVs easy to edit, simply copy the files in `GLE_V2` into `SMG2/data/files` (Replace if asked). You will have to these files over to the riivolution path anytime you change something.
+
+<sub>If you are starting modding, please reconsider installing GLE as it will only complicate your experience.</sub>
+
+Open your workspace and add [the hubworld template](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Template-Files#new-hubworld-template). Then, follow [this guide](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Creating-a-New-Galaxy#giving-your-galaxy-a-name). Be sure to also change `YourHubworldGalaxyScenario.arc`'s root name.
+
+Now we are going to set up the SavePointList. 
+
+Archive: `/ObjectData/SystemDataTable.arc`, File: `/SystemDataTable/SavePointList.bcsv`
+
+## Recommended Values For Your Hubworld
+| ID    | GalaxyName | ScenarioNo | ZoneName | MarioNo | Player | ResultPathId | EntryPathId | EntireLevelFlag |
+|:-------------:|:-------------:|:-------------:| -------------| -------------| -------------| -------------| -------------| -------------|
+| 0 - Default      | [YourHubworldName] | 1 |  | 0 | 1 | 0 | 0 | 1 |
+
+<sub>Read more about the SavePointList [here](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/SavePointList)</sub>
