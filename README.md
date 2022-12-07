@@ -12,7 +12,7 @@ Other stuff may be read about on the [official wiki](https://github.com/SuperHac
 - [Whitehole](https://github.com/SunakazeKun/Whitehole-Despaghettification/releases)
 - [WiiExplorer](https://github.com/SuperHackio/WiiExplorer/releases)
 - [Scenaristar](https://github.com/SuperHackio/Scenaristar) - You may want to build it yourself as there is no release with GLE support yet.
-- A bit of knowledge on SMG2. 
+- A bit of knowledge on SMG2 modding. 
 
 <sub>Read more on the necessary knowledge [here](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/SavePointList).</sub>
 
@@ -48,11 +48,11 @@ The game should be able to boot up, but won't be able to load a file. If this is
 **Congratulations!** Next we will be adding a hubworld. Don't add any other custom code quite yet.
 
 ## Problem: Black Screen Loading Screen
-This happens because your XML is setup wrong. Make sure the folder name matches what you set `[YourHackName]` to.
+This happens because your XML is setup wrong. It copies the code for GLE but doesn't copy the necessary files. Thus, it gives a `file isn't exist` exception. Make sure the folder name matches what you set `[YourHackName]` to.
 
 # Adding a hubworld
 
-To make the BCSVs easy to edit, simply copy the files in `GLE_V2` into `SMG2/data/files` (Replace if asked). You will have to these files over to the riivolution path anytime you change something.
+To make the BCSVs easy to edit, simply copy the files in `GLE_V2` into `SMG2/data/files` (Replace if asked). You will have to copy these files over to your riivolution game files anytime you want that changed.
 
 Open your workspace and add [the hubworld template](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Template-Files#new-hubworld-template). Then, follow [this guide](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Creating-a-New-Galaxy#giving-your-galaxy-a-name). Be sure to also change `YourHubworldGalaxyScenario.arc`'s root name. 
 
@@ -67,7 +67,7 @@ Archive: `/ObjectData/SystemDataTable.arc`, File: `/SystemDataTable/SavePointLis
 |:-------------:|:-------------:|:-------------:| -------------| -------------| -------------| -------------| -------------| -------------|
 | 0<sup>1</sup>      | [YourHubworldName]<sup>2</sup> | 1 |  | 0 | -1 | 0 | 0 | 1 |
 
-<sub>1: an ID of 0 is required; 2: Replace `[YourHubworldName]` with the internal name of your hubworld; Read more about the SavePointList [here](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/SavePointList)</sub>
+<sub>1: an entry with the ID of 0 is required; 2: Replace `[YourHubworldName]` with the internal name of your hubworld; Read more about the SavePointList [here](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/SavePointList)</sub>
 
 ## To make the menu say "Save And Quit" instead of "Return to World Map"
 Archive: `/StageData/[YourHubworldName]/[YourHubworldName]Map.arc`, File: `/Stage/jmp/List/ScenarioSettings`<sup>1</sup>
