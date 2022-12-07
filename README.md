@@ -21,6 +21,8 @@ Inside the `riivolution` folder you just created, create a new xml. You can call
 
 (Refer to [this](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Setup-Guide#making-a-riivolution-xml) for the layout of the xml)
 
+Rename `GLE_V2` to whatever you called `[YourHackName]`.
+
 Edit your xml and put the code where it specifies. You can get this code from `GLE-V2\Riivolution\GLEV2_[REGION]-SB4[R]01.xml`.
 
 Make a copy for every region of your hack (USA, PAL, JPN, ... TWN and KOR are not supported atm, but should be in the future)
