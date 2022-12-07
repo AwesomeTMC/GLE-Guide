@@ -1,5 +1,5 @@
 # GLE Guide
-This guide will help you:
+This guide can help you do the following with the Galaxy Level Engine:
 - Set up a riivolution patch with GLE included for your mod
 - Set up a hubworld
 - Get a galaxy working
@@ -10,6 +10,9 @@ Other stuff may be read about on the [official wiki](https://github.com/SuperHac
 - [GLE](https://github.com/SuperHackio/GalaxyLevelEngine/releases) (Make sure not to download the template hack by accident!)
 - [Dolphin](https://dolphin-emu.org/)
 - [Whitehole](https://github.com/SunakazeKun/Whitehole-Despaghettification/releases)
+- A bit of knowledge on SMG2. 
+
+<sub>Read more on the necessary knowledge [here](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/SavePointList).</sub>
 
 # "Initializing" GLE & Making an XML for your mod
 First, [download GLE](https://github.com/SuperHackio/GalaxyLevelEngine/releases).
@@ -20,7 +23,7 @@ Additionally, make a `riivolution` folder inside the new folder.
 
 Inside the `riivolution` folder you just created, create a new xml. You can call it whatever.
 
-(Refer to [this](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Setup-Guide#making-a-riivolution-xml) for the layout of the xml)
+<sub>Refer to [this](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Setup-Guide#making-a-riivolution-xml) for the layout of the xml</sub>
 
 Rename `GLE_V2` to whatever you called `[YourHackName]`.
 
@@ -49,9 +52,9 @@ This happens because your XML is setup wrong. Make sure the folder name matches 
 
 To make the BCSVs easy to edit, simply copy the files in `GLE_V2` into `SMG2/data/files` (Replace if asked). You will have to these files over to the riivolution path anytime you change something.
 
-<sub>If you are starting modding, please reconsider installing GLE as it will only complicate your experience.</sub>
+Open your workspace and add [the hubworld template](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Template-Files#new-hubworld-template). Then, follow [this guide](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Creating-a-New-Galaxy#giving-your-galaxy-a-name). Be sure to also change `YourHubworldGalaxyScenario.arc`'s root name. 
 
-Open your workspace and add [the hubworld template](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Template-Files#new-hubworld-template). Then, follow [this guide](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Creating-a-New-Galaxy#giving-your-galaxy-a-name). Be sure to also change `YourHubworldGalaxyScenario.arc`'s root name.
+Add some entries for the galaxy in `GalaxyName.msbt`, `GalaxyNameShort.msbt`, and `ScenarioName.msbt`, and we're done with that!
 
 Now we are going to set up the SavePointList. 
 
@@ -60,6 +63,15 @@ Archive: `/ObjectData/SystemDataTable.arc`, File: `/SystemDataTable/SavePointLis
 ## Recommended Values For Your Hubworld
 | ID    | GalaxyName | ScenarioNo | ZoneName | MarioNo | Player | ResultPathId | EntryPathId | EntireLevelFlag |
 |:-------------:|:-------------:|:-------------:| -------------| -------------| -------------| -------------| -------------| -------------|
-| 0 - Default      | [YourHubworldName] | 1 |  | 0 | 1 | 0 | 0 | 1 |
+| 0 - Default      | [YourHubworldName] | 1 |  | 0 | -1 | 0 | 0 | 1 |
 
 <sub>Read more about the SavePointList [here](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/SavePointList)</sub>
+
+To make the menu say "Save And Quit" instead of "Return to World Map" open:
+
+Archive: `/StageData/[YourHubworldName]/[YourHubworldName]Map.arc`, File: `/Stage/jmp/List/ScenarioSettings`
+
+Add a new field and activate whatever you want [on this list](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Stages#available-settings).
+
+## Congratulations!
+There have been no common errors on this yet. Let me know if you have a problem.
