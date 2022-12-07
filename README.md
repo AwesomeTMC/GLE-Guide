@@ -60,12 +60,12 @@ Now we are going to set up the SavePointList.
 
 Archive: `/ObjectData/SystemDataTable.arc`, File: `/SystemDataTable/SavePointList.bcsv`
 
-## Recommended Values For Your Hubworld
+## Recommended Values For Your Hubworld's SavePointList
 | ID    | GalaxyName | ScenarioNo | ZoneName | MarioNo | Player | ResultPathId | EntryPathId | EntireLevelFlag |
 |:-------------:|:-------------:|:-------------:| -------------| -------------| -------------| -------------| -------------| -------------|
-| 0 - Default      | [YourHubworldName] | 1 |  | 0 | -1 | 0 | 0 | 1 |
+| 0<sup>1</sup>      | [YourHubworldName]<sup>2</sup> | 1 |  | 0 | -1 | 0 | 0 | 1 |
 
-<sub>Read more about the SavePointList [here](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/SavePointList)</sub>
+<sub>1: an ID of 0 is required; 2: Replace `[YourHubworldName]` with the internal name of your hubworld; Read more about the SavePointList [here](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/SavePointList)</sub>
 
 To make the menu say "Save And Quit" instead of "Return to World Map" open:
 
