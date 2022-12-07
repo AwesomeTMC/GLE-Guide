@@ -21,9 +21,11 @@ Inside the `riivolution` folder you just created, create a new xml. You can call
 
 (Refer to [this](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Setup-Guide#making-a-riivolution-xml) for the layout of the xml)
 
+Inside `GLE_V2/LayoutData`
+
 Rename `GLE_V2` to whatever you called `[YourHackName]`.
 
-Edit your xml and put the code where it specifies. You can get this code from `GLE-V2\Riivolution\GLEV2_[REGION]-SB4[R]01.xml`.
+Edit your xml and put the xml lines where it specifies. You can get this code from `GLE-V2\Riivolution\GLEV2_[REGION]-SB4[R]01.xml`.
 
 Make a copy for every region of your hack (USA, PAL, JPN, ... TWN and KOR are not supported atm, but should be in the future)
 
@@ -37,4 +39,12 @@ Right click on your ISO/WBFS and click "Start with Riivolution Patches...".
 
 Open the XML that you just created and save a preset. Name it whatever your hack's name is. Then enable it and click start. 
 
-The game should be able to boot up, but won't be able to load a file. If this is the case... **GLE is now initialized!**
+The game should be able to boot up, but won't be able to load a file. If this is the case...
+## GLE is now initialized!
+**Congratulations!** Next we will be adding a hubworld.
+
+## Problem: Black Screen Loading Screen
+This happens because your XML is setup wrong. Make sure the folder name matches what you set `[YourHackName]` to.
+
+# Adding a hubworld
+
