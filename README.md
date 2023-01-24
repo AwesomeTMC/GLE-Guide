@@ -76,8 +76,11 @@ Archive: `/StageData/[YourHubworldName]/[YourHubworldName]Map.arc`, File: `/Stag
 
 Add a new row and activate whatever you want [on this list](https://github.com/SuperHackio/GalaxyLevelEngine/wiki/Stages#available-settings).
 
+## Problem: Looping File Select
+Make sure to create a new save file. You cannot use files that existed before the `SavePointList` was changed.
+
 ## Congratulations!
-There have been no common errors on this yet. Let me know if you have a problem. You may now add the custom code to your xml.
+Let me know if you have any problems. You may now add any additional custom code to your xml.
 
 # Adding a new galaxy
 
